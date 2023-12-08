@@ -1,0 +1,17 @@
+{
+  "name": "goit-node.js-hw-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm init -y",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nanoid": "^5.0.4"
+  }
+}
