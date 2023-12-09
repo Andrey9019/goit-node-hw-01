@@ -1,4 +1,5 @@
 import * as contactsServise from "./contacts.js";
+import { program } from "commander";
 
 const invokeAction = async ({ action, id, ...data }) => {
   switch (action) {
@@ -21,3 +22,15 @@ const invokeAction = async ({ action, id, ...data }) => {
 // invokeAction({ action: "getById", id: "e6ywwRe4jcqxXfCZOj_1e" });
 // invokeAction({action: "add", name: "Andrii Zirchenko", email: "test@gmail.com", phone: "0964490291",});
 // invokeAction({ action: "deleteById", id: "e6ywwRe4jcqxXfCZOj_1e" });
+
+program
+  .option("--a, --action <type>")
+  .option("--i, --id <type>")
+  .option("--n, --name <type>")
+  .option("--e, --email <type>")
+  .option("--p, --phone <type>");
+
+program.parse();
+
+const options = program.opts();
+invokeAction(options);
